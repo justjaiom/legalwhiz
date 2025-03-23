@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 
 const DocumentGenerator = () => {
   const [companyName, setCompanyName] = useState('')
   const [country, setCountry] = useState('')
   const [documentType, setDocumentType] = useState('')
+  const [contextInfo, setContextInfo] = useState('')
   const [generatedDocument, setGeneratedDocument] = useState('')
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -20,7 +20,7 @@ const DocumentGenerator = () => {
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ companyName, country, documentType }),
+        body: JSON.stringify({ companyName, country, documentType, contextInfo }),
       })
 
       const data = await response.json()
@@ -74,6 +74,16 @@ const DocumentGenerator = () => {
             <option value="NDA">NDA</option>
             <option value="Privacy Policy">Privacy Policy</option>
           </select>
+        </div>
+        <div className="space-y-2">
+          <label className="block font-medium">Context / Notes:</label>
+          <textarea
+            value={contextInfo}
+            onChange={(e) => setContextInfo(e.target.value)}
+            rows={4}
+            placeholder="Add any specific terms, names, goals, or requirements for the document here."
+            className="w-full border px-3 py-2 rounded-md text-sm resize-none"
+          />
         </div>
         <Button type="submit" className="w-full active:scale-95 transition-transform duration-100">
           {loading ? 'Generating...' : 'Generate Document'}
