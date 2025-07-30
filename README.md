@@ -19,7 +19,7 @@
 - **Framework:** [Next.js 14](https://nextjs.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com)
 - **Authentication:** [Clerk](https://clerk.dev)
-- **Database:** [Supabase](https://supabase.io) *(optional for persistence)*
+- **Database:** [Supabase](https://supabase.io) *in progress of development*
 - **AI Backend:** [OpenAI API](https://platform.openai.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 
