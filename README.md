@@ -24,10 +24,3 @@
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 
 ---
-
-## 🛠 Installation
-
-```bash
-git clone https://github.com/your-username/legalwhiz.git
-cd legalwhiz
-npm install
