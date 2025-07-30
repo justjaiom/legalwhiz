@@ -15,33 +15,33 @@ export default function DashboardPage() {
   const [documents, setDocuments] = useState<any[]>([])
   const [loadingDocs, setLoadingDocs] = useState(true)
 
-  useEffect(() => {
-    if (isLoaded && !user) {
-      router.push('/sign-in')
-    }
+  // useEffect(() => {
+  //   if (isLoaded && !user) {
+  //     router.push('/sign-in')
+  //   }
 
-    if (user) {
-      fetchDocuments()
-    }
+  //   if (user) {
+      // fetchDocuments()
+  //   }
 
-    async function fetchDocuments() {
-      setLoadingDocs(true)
-      const { data, error } = await supabase
-        .from('documents')
-        .select('*')
-        .eq('user_id', user?.id)
-        .order('created_at', { ascending: false })
+  //   async function fetchDocuments() {
+  //     setLoadingDocs(true)
+  //     const { data, error } = await supabase
+  //       .from('documents')
+  //       .select('*')
+  //       .eq('user_id', user?.id)
+  //       .order('created_at', { ascending: false })
 
-      if (!error) {
-        setDocuments(data)
-      }
-      setLoadingDocs(false)
-    }
-  }, [isLoaded, user])
+  //     if (!error) {
+  //       setDocuments(data)
+  //     }
+  //     setLoadingDocs(false)
+  //   }
+  // }, [isLoaded, user])
 
-  if (!isLoaded || (user && loadingDocs)) {
-    return <div className="p-4">Loading dashboard...</div>
-  }
+  // if (!isLoaded || (user && loadingDocs)) {
+  //   return <div className="p-4">Loading dashboard...</div>
+  // }
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
