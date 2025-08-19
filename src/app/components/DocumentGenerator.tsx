@@ -73,6 +73,11 @@ const DocumentGenerator = () => {
             <option value="">Select a document type</option>
             <option value="NDA">NDA</option>
             <option value="Privacy Policy">Privacy Policy</option>
+            <option value="Terms and Conditions">Terms and Conditions</option>
+            <option value="Partnership Agreement">Partnership Agreement</option>
+            <option value="Employee Agreement">Employee Agreement</option>
+            <option value="Intellectual property">Intellectual property</option>
+
           </select>
         </div>
         <div className="space-y-2">
